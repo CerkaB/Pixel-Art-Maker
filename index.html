@@ -7,24 +7,26 @@
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
-
+    <h1>Pixel Art Maker</h1>
+  <div id="toolSection">
     <h2>Choose Grid Size</h2>
     <form id="sizePicker">
-        Grid Height (1 - 50):
-        <input type="number" id="input_height" name="height" min="1" max="50" value="30">
-        Grid Width (1 - 50):
-        <input type="number" id="input_width" name="width" min="1" max="50" value="30" >
-         <button type='submit' id="submit">Submit/Clear</button>
+        Grid Height:<br>
+        <input type="number" id="input_height" name="height" min="1" max="50" value="30"><br>
+        Grid Width:<br>
+        <input type="number" id="input_width" name="width" min="1" max="50" value="30" ><br>
+         <button type='submit' id="submit">Create</button>
          <button type='button' id="reset">Reset</button>
     </form>
 
     <h2>Pick A Color</h2>
     <input type="color" id="colorPicker">
-
+  </div>
+  <div id="gridSection">
     <h2>Design Canvas</h2>
+    <p>Left click to draw. Right click to remove.</p>
     <table id="pixel_canvas"></table>
-
     <script src="designs.js"></script>
+  </div>
 </body>
 </html>

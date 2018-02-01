@@ -1,21 +1,26 @@
 body {
     text-align: center;
     font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #02b3e4;
 }
 
 h1 {
+    text-align: left;
     font-size: 70px;
     margin: 0.2em;
+
 }
 
 h2 {
     margin: 1em 0 0.25em;
+
 }
 
 h2:first-of-type {
     margin-top: 0.5em;
 }
-
 table,
 tr,
 td {
@@ -36,5 +41,56 @@ td {
 }
 
 input[type=number] {
-    width: 6em;
+    text-align: center;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+    border: 2px solid #02b3e4;
+    border-radius: 5px;
+    margin: 10px;
+}
+input[type=button] {
+    background: none;
+    text-align: center;
+    font-size: 18px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid #02b3e4;
+    border-radius: 5px;
+}
+input[type=color] {
+  margin: 5%;
+  width: 150px;
+  height: 30px;
+  border: 2px solid #02b3e4;
+  border-radius: 5px;
+}
+button {
+  background: none;
+  font-size: 14px;
+  color: #02b3e4;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  position: relative;
+  border: 2px solid #02b3e4;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+button:hover {
+	background: #02b3e4;
+	color: white;
+}
+#sizePicker {
+  margin: 10px;
+}
+#toolSection {
+  float: left;
+  width: 20%;
+  border: 2px solid #02b3e4;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-top: 5%;
 }

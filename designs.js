@@ -1,5 +1,5 @@
 //Welcome to Boris' Pixel Art Project
-//Version: V 1.0.0
+//Version: V 1.5.0
 const table = $('#pixel_canvas');
 // Select color input
 const colorPicker = $('#colorPicker');
@@ -19,6 +19,25 @@ function makeGrid() {
 table.on("click" , "td" , function(){
   $(this).css("background-color" , colorPicker.val());
 });
+//Right mouse click to remove color from cell.
+table.on("contextmenu", "td", function() {
+  $(this).css("background-color", "white");
+  return false;
+});
+//When user holds mouse click it continues to draw.
+let mouseIsHold = false;
+table.on("mousedown", "td", function() {
+  mouseIsHold = true;
+  $(this).css("background-color", colorPicker.val());
+});
+table.on("mouseenter", "td", function() {
+  if (mouseIsHold) {
+    $(this).css("background-color", colorPicker.val());
+  }
+});
+$('body').on("mouseup", function() {
+  mouseIsHold = false;
+});
 //================= Submit/Clear Button ===================//
 $('form').submit(function(e) {
   table.empty();
@@ -31,4 +50,19 @@ $('#reset').click(function() {
   colorPicker.val("#000000");
   tableHeight.val(30);
   tableWidth.val(30);
+});
+//////////////////////////////////////////////////////////////////
+let mouseIsDown = false; //this variable helps with FF default issue
+
+table.on("mousedown", "td", function() {
+  mouseIsDown = true;
+  $(this).css("background-color", colorPicker.val());
+});
+table.on("mouseenter", "td", function() {
+  if (mouseIsDown) {
+    $(this).css("background-color", colorPicker.val());
+  }
+});
+$('body').on("mouseup", function() {
+  mouseIsDown = false;
 });
